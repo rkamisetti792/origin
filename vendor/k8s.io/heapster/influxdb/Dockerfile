@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:rolling
 
 MAINTAINER Vishnu kannan "<vishnuk@google.com>"
 
