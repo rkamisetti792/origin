@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.13
 MAINTAINER dengnan@google.com vmarmol@google.com vishnuk@google.com jimmidyson@gmail.com stclair@google.com
 
 ENV GLIBC_VERSION "2.28-r0"
