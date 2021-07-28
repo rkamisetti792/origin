@@ -1,4 +1,4 @@
-FROM golang:1.9
+FROM golang:1.15
 
 ENV TRILLIAN_LOG_HOST=1.2.3.4 \
     TRILLIAN_LOG_PORT=9999 \
