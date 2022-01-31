@@ -1,4 +1,4 @@
-FROM golang:1.10-stretch
+FROM golang:rc-stretch
 
 RUN apt-get update && apt-get install -y \
     build-essential \
