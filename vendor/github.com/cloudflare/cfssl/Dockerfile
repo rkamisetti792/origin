@@ -1,4 +1,4 @@
-FROM golang:1.9.2
+FROM golang:1.18.2
 
 ENV USER root
 
