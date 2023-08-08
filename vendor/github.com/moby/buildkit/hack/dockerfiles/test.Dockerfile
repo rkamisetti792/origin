@@ -118,7 +118,7 @@ FROM cross-windows AS buildkitd.exe
 ENV CGO_ENABLED=0
 RUN go build -ldflags "$(cat .tmp/ldflags)" -o /out/buildkitd.exe ./cmd/buildkitd
 
-FROM alpine AS buildkit-export
+FROM alpine:3.18.3 AS buildkit-export
 RUN apk add --no-cache git
 VOLUME /var/lib/buildkit
 
@@ -141,7 +141,7 @@ COPY --from=buildkitd.containerd_only /usr/bin/buildkitd.containerd_only /usr/bi
 COPY --from=buildctl /usr/bin/buildctl /usr/bin/
 ENTRYPOINT ["buildkitd.containerd_only"]
 
-FROM alpine AS containerd-runtime
+FROM alpine:3.18.3 AS containerd-runtime
 COPY --from=runc /usr/bin/runc /usr/bin/
 COPY --from=containerd /go/src/github.com/containerd/containerd/bin/containerd* /usr/bin/
 COPY --from=containerd /go/src/github.com/containerd/containerd/bin/ctr /usr/bin/
