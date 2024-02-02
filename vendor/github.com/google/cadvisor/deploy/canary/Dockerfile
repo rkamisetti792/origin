@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang:1.22rc2-bookworm
 MAINTAINER vmarmol@google.com
 
 RUN apt-get update && apt-get install -y git dmsetup && apt-get clean
